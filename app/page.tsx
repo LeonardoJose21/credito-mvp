@@ -26,7 +26,9 @@ export default function Home() {
   const current = QUESTIONS[answers.length];
   const show = (i: number) => (QUESTIONS[i].money ? cop(answers[i]) : answers[i]);
 
-  useEffect(() => endRef.current?.scrollIntoView({ behavior: "smooth" }), [answers, step]);
+  useEffect(() => {
+  endRef.current?.scrollIntoView({ behavior: "smooth" });
+}, [answers, step]);
 
   useEffect(() => {
     if (step !== "result") return;
